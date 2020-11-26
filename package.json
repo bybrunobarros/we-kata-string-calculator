@@ -1,0 +1,69 @@
+{
+  "name": "we-kata-string-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava",
+    "test:watch": "ava --watch",
+    "format": "prettier --check './**/*.js'",
+    "format:fix": "prettier --write './**/*.js'",
+    "lint": "eslint './**/*.js'",
+    "lint:fix": "eslint --cache --fix './**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bybrunobarros/we-kata-string-calculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bybrunobarros/we-kata-string-calculator/issues"
+  },
+  "homepage": "https://github.com/bybrunobarros/we-kata-string-calculator#readme",
+  "devDependencies": {
+    "ava": "^3.12.1",
+    "eslint": "^7.8.1",
+    "eslint-config-prettier": "^6.11.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.3.0",
+    "prettier": "^2.1.1"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "type": "module",
+  "prettier": {
+    "trailingComma": "all"
+  },
+  "eslintConfig": {
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "prettier"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2019,
+      "sourceType": "module"
+    }
+  },
+  "ava": {
+    "extensions": [
+      "js"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:fix",
+      "npm run format:fix"
+    ]
+  }
+}
